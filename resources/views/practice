@@ -1,0 +1,5 @@
+@extends('layouts/app')
+
+@section('maincontent')
+<h1>hello bd</h1>
+@endsection()
