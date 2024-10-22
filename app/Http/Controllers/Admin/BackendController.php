@@ -32,15 +32,15 @@ class BackendController extends Controller
 
         public function hero_form_save(HeroSectionRequest $arequest){
            
-              $validate_input = $arequest->validate();
-              
-        //    $validate_input = $arequest->validate([
-        //     'person_name'=>'required|string|max:2',
-        //     'hello'=>'required',
-        //     'designation'=>'required',
-        //     'btn_text'=>'required',
-        //     'btn_url'=>'required'
-        //    ]);
+              $validate_input = $arequest->validated();
+
+                    //    $validate_input = $arequest->validate([
+                    //     'person_name'=>'required|string|max:2',
+                    //     'hello'=>'required',
+                    //     'designation'=>'required',
+                    //     'btn_text'=>'required',
+                    //     'btn_url'=>'required'
+                    //    ]);
            
             $hero_name = $arequest->person_name;
             $hero_hello = $arequest->hello;
@@ -52,7 +52,6 @@ class BackendController extends Controller
             VALUES('$hero_name','$hero_hello','$hero_designation','$hero_btn_text','$hero_btn_url')");
 
             return redirect()->route('admin.herolist');
-            // return redirect()->back();
             
         }
 
@@ -74,7 +73,7 @@ class BackendController extends Controller
             // ->update(array('person_name'=>$hero_name,'hello'=>$hero_hello,'designation'=>$hero_designation,'btn_text'=>$hero_btn_text,'btn_url'=>$hero_btn_url));  // update the record in the DB. 
                 
             return redirect()->route('admin.herolist');
-            // return redirect()->back();
+           
         }
 
 }

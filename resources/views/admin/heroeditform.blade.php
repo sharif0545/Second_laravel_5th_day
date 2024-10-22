@@ -16,8 +16,7 @@
 @php
 
   $hero_section_array = (array)$hero_updated_by_id;
-    echo "</br>";
-    var_dump($hero_section_array['id']);
+
 @endphp
 
   {{-- @foreach ($hero_updated_by_id as $updated_single_value) --}}
